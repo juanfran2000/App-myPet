@@ -1,39 +1,44 @@
 "use client";
-
-import React from "react";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-} from "pure-react-carousel";
+import { ReactNode, useState } from "react";
+import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
-type Props = {};
+type Props = { slides: ReactNode[] };
 
-const PureCarousel = (props: Props) => {
+const PureCarousel = ({ slides }: Props) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleGoToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
+
   return (
-    <CarouselProvider
-      naturalSlideWidth={0}
-      naturalSlideHeight={0}
-      isIntrinsicHeight
-      totalSlides={3}
-    >
-      <Slider>
-        <Slide index={0}>
-          <div className=" bg-zinc-500 h-40">I am the first Slide.</div>
-        </Slide>
-        <Slide index={1}>
-          <div className=" bg-red-500 h-40">I am the second Slide.</div>
-        </Slide>
-        <Slide index={2}>
-          <div className=" bg-blue-500 h-40">I am the third Slide.</div>
-        </Slide>
-      </Slider>
-      <ButtonBack>Back</ButtonBack>
-      <ButtonNext>Next</ButtonNext>
-    </CarouselProvider>
+    <div>
+      <CarouselProvider
+        naturalSlideWidth={0}
+        naturalSlideHeight={0}
+        isIntrinsicHeight
+        totalSlides={slides.length}
+        currentSlide={currentIndex}
+      >
+        <Slider className="h-[500px]">
+          {slides.map((slide, index) => {
+            return <Slide index={index}>{slide}</Slide>;
+          })}
+        </Slider>
+      </CarouselProvider>
+      <div className="flex justify-center space-x-3">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => handleGoToSlide(index)}
+            className="px-4 py-2 text-zinc-500"
+          >
+            {index + 1}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 };
 
