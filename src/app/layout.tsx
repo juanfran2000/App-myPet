@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Navbar from "./components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,13 +15,31 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const elementosNav = [
+    <a href="/">Home</a>,
+
+    <a href="./ejemplo">Ejemplo</a>,
+
+    <a href="#">iPhone</a>,
+
+    <a href="#">Watch</a>,
+
+    <a href="#">TV</a>,
+
+    <a href="#">Music</a>,
+
+    <a href="#">Support</a>,
+  ];
   return (
     <html lang="en">
       <head>
         <title>myPet</title>
       </head>
       <body className={inter.className}>
-        {children}
+        <header>
+          <Navbar elementosNav={elementosNav} />
+        </header>
+        <main>{children}</main>
         <footer></footer>
       </body>
     </html>
