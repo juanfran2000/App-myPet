@@ -1,8 +1,6 @@
-import { ReactNode } from "react";
+type Props = { elements: { url: string; name: string }[] };
 
-type Props = { elementosNav: ReactNode[] };
-
-const Navbar = ({ elementosNav }: Props) => {
+const Navbar = ({ elements }: Props) => {
   return (
     <div className="bg-zinc-700 flex justify-between h-16 items-center m-5">
       <div className="ml-10">
@@ -15,15 +13,17 @@ const Navbar = ({ elementosNav }: Props) => {
         </a>
       </div>
       <ul className="text-zinc-300 flex space-x-40 text-lg">
-        {elementosNav.map((elemento, index) => (
-          <li key={index}>{elemento}</li>
+        {elements.map((element, index) => (
+          <li key={index}>
+            <a href={element.url}>{element.name}</a>
+          </li>
         ))}
       </ul>
       <div>
-        <img src="search.svg"></img>
+        <img src="./icons/icon-search.svg"></img>
       </div>
       <div className="mr-10">
-        <img src="shopping-bag.svg"></img>
+        <img src="./icons/icon-shopping.svg"></img>
       </div>
     </div>
   );

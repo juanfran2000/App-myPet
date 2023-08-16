@@ -15,20 +15,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const elementosNav = [
-    <a href="/">Home</a>,
-
-    <a href="./ejemplo">Ejemplo</a>,
-
-    <a href="#">iPhone</a>,
-
-    <a href="#">Watch</a>,
-
-    <a href="#">TV</a>,
-
-    <a href="#">Music</a>,
-
-    <a href="#">Support</a>,
+  const elementsNav = [
+    { url: "/", name: "Home" },
+    { url: "./ejemplo", name: "Ejemplo" },
+    { url: "#", name: "iPhone" },
+    { url: "#", name: "Watch" },
+    { url: "#", name: "TV" },
+    { url: "#", name: "Music" },
+    { url: "#", name: "Support" },
   ];
   return (
     <html lang="en">
@@ -37,7 +31,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <header>
-          <Navbar elementosNav={elementosNav} />
+          <Navbar elements={elementsNav} />
         </header>
         <main>{children}</main>
         <footer></footer>
