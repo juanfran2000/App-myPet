@@ -1,25 +1,16 @@
-import Navbar from "../components/Navbar";
 import PureCarousel from "../components/PureCarousel";
 
 export default function ejemplo() {
-  const imagenesCarousel = [
-    <div>
-      <img src="carousel-imagenUno.jpg" alt="Slide 1"></img>
-    </div>,
-    <div>
-      <img src="carousel-imagenDos.jpg" alt="Slide 2"></img>
-    </div>,
-    <div>
-      <img src="carousel-imagenTres.jpg" alt="Slide 3"></img>
-    </div>,
-    <div>
-      <img src="carousel-imagenCuatro.jpg" alt="Slide 4"></img>
-    </div>,
+  const imgCarousel = [
+    { url: "carousel-imagenUno.jpg", alt: "imagen carousel 1" },
+    { url: "carousel-imagenDos.jpg", alt: "imagen carousel 2" },
+    { url: "carousel-imagenTres.jpg", alt: "imagen carousel 3" },
+    { url: "carousel-imagenCuatro.jpg", alt: "imagen carousel 4" },
   ];
 
   return (
     <div>
-      <PureCarousel slides={imagenesCarousel} />
+      <PureCarousel slides={imgCarousel} />
     </div>
   );
 }

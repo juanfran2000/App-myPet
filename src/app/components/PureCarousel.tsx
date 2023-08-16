@@ -3,7 +3,7 @@ import { ReactNode, useState } from "react";
 import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
-type Props = { slides: ReactNode[] };
+type Props = { slides: { url: string; alt: string }[] };
 
 const PureCarousel = ({ slides }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,7 +23,13 @@ const PureCarousel = ({ slides }: Props) => {
       >
         <Slider className="h-[500px]">
           {slides.map((slide, index) => {
-            return <Slide index={index}>{slide}</Slide>;
+            return (
+              <Slide index={index}>
+                <div>
+                  <img src={slide.url} alt={slide.alt}></img>
+                </div>
+              </Slide>
+            );
           })}
         </Slider>
       </CarouselProvider>
