@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import MyFooter from "./Components/MyFooter";
+import Footer from "./Components 3/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,51 +15,36 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const enlacesFooter = [
-    <a href="/" className="m-1">
-      Info
-    </a>,
-    <a href="/" className="m-1 text-gray-500">
-      ·
-    </a>,
-    <a href="/" className="m-1">
-      Support
-    </a>,
-    <a href="/" className="m-1 text-gray-500">
-      ·
-    </a>,
-    <a href="/" className="m-1">
-      Marketing
-    </a>,
-    <a href="/" className="m-1">
-      Terms of Use
-    </a>,
-    <a href="/" className="m-1 text-gray-500">
-      ·
-    </a>,
-    <a href="/" className="m-1">
-      Privacy Policy
-    </a>,
+  const elements = [
+    { url: "/", name: "Info" },
+    { url: "/", name: "Support" },
+    { url: "/", name: " Marketing" },
+    { url: "/", name: "Terms of Use" },
+    { url: "/", name: " Privacy Policy" },
   ];
 
-  let svgsEnlaces = [
-    <a href="https://es-la.facebook.com/" target="_blank">
-      <img src="facebook.svg"></img>
-    </a>,
-
-    <a
-      href="https://www.instagram.com/accounts/login/?__coig_restricted=1"
-      target="_blank"
-    >
-      <img src="instagram.svg"></img>
-    </a>,
-    <a
-      href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZXMifQ%3D%3D%22%7D"
-      target="_blank"
-    >
-      <img src="twitter.svg"></img>
-    </a>,
+  let socialElements = [
+    {
+      url: "https://es-la.facebook.com/",
+      iconUrl: "./icons/icon-facebook.svg",
+      alt: "facebook",
+    },
+    {
+      url: "https://www.instagram.com/accounts/login/?__coig_restricted=1",
+      iconUrl: "./icons/icon-instagram.svg",
+      alt: "Instagram",
+    },
+    {
+      url: "https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZXMifQ%3D%3D%22%7D",
+      iconUrl: "./icons/icon-twitter.svg",
+      alt: "Twitter",
+    },
   ];
+
+  let logoImg = {
+    url: "./icons/icon-Logo.svg",
+    alt: "Logo",
+  };
   return (
     <html lang="en">
       <head>
@@ -69,7 +54,11 @@ export default function RootLayout({
         <header></header>
         <main>{children}</main>
         <footer>
-          <MyFooter enlacesFooter={enlacesFooter} svgsEnlaces={svgsEnlaces} />
+          <Footer
+            elements={elements}
+            socialElements={socialElements}
+            logoImg={logoImg}
+          />
         </footer>
       </body>
     </html>
