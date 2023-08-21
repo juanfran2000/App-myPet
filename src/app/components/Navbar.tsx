@@ -2,7 +2,7 @@ type Props = { elements: { url: string; name: string }[] };
 
 const Navbar = ({ elements }: Props) => {
   return (
-    <div className="bg-zinc-700 flex justify-between h-16 items-center m-5">
+    <div className="bg-slate-900 flex justify-between h-16 items-center m-5">
       <div className="ml-10">
         <a href="/">
           <img
