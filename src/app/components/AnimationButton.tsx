@@ -1,16 +1,18 @@
 type Props = {
   buttonCustom: {
+    link: string;
     backgroundColor: string;
     backgroundSecondColor: string;
     buttonText: string;
   };
 };
 
-const JButton = ({ buttonCustom }: Props) => {
-  const { backgroundColor, backgroundSecondColor, buttonText } = buttonCustom;
+const AnimationButton = ({ buttonCustom }: Props) => {
+  const { link, backgroundColor, backgroundSecondColor, buttonText } =
+    buttonCustom;
 
   return (
-    <a>
+    <a href={link}>
       <button
         className={`${backgroundColor} inline-block p-3 rounded-xl text-white hover:scale-105 hover:${backgroundSecondColor} transition duration-700 shadow-sm`}
       >
@@ -20,4 +22,4 @@ const JButton = ({ buttonCustom }: Props) => {
   );
 };
 
-export default JButton;
+export default AnimationButton;
