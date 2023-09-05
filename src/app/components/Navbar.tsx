@@ -1,14 +1,15 @@
 type Props = { elements: { url: string; name: string }[] };
-
+import Image from "next/image";
 const Navbar = ({ elements }: Props) => {
   return (
     <div className="bg-slate-900 flex justify-between h-16 items-center m-5">
       <div className="ml-10">
         <a href="/">
-          <img
-            src="https://imagenpng.com/wp-content/uploads/2017/05/Apple_Logo_Png_06.png"
-            width={20}
-            alt="Apple Logo"
+          <Image
+            src="/icons/icon-shopping.svg"
+            width={26}
+            height={26}
+            alt="logo"
           />
         </a>
       </div>
@@ -20,10 +21,20 @@ const Navbar = ({ elements }: Props) => {
         ))}
       </ul>
       <div>
-        <img src="./icons/icon-search.svg"></img>
+        <Image
+          src="./icons/icon-search.svg"
+          alt="icon search"
+          width={26}
+          height={26}
+        />
       </div>
       <div className="mr-10">
-        <img src="./icons/icon-shopping.svg"></img>
+        <Image
+          src="./icons/icon-shopping.svg"
+          alt="icon shopping"
+          width={26}
+          height={26}
+        />
       </div>
     </div>
   );
