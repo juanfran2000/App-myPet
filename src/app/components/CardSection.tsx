@@ -26,8 +26,8 @@ const CardSection = ({ elements, background }: Props) => {
               <div className="group-hover:-mt-[100px] group-hover:scale-75 group-hover:shadow-xl absolute w-[300px] h-[220px] top-[20px] rounded-xl transition-height duration-500 ease-in-out overflow-hidden">
                 <Image
                   className="w-full h-full object-cover"
-                  width={100} // Cambiar "width={100}" en lugar de "width='100'"
-                  height={100} // Cambiar "height={100}" en lugar de "height='100'"
+                  width={100}
+                  height={100}
                   src={element.imageSrc}
                   alt={element.imageAlt}
                 />
