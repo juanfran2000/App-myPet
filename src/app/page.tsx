@@ -1,4 +1,5 @@
 import CardSection from "./components/CardSection";
+import Form from "./components/Form";
 
 const configCardAnimated = [
   {
@@ -34,6 +35,7 @@ export default function Home() {
         }}
         elements={configCardAnimated}
       />
+      <Form />
     </div>
   );
 }
