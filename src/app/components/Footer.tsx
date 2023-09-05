@@ -1,6 +1,8 @@
+import Image from "next/image";
+
 type Props = {
   elements: { url: string; name: string }[];
-  socialElements: { url: string; alt: string; iconUrl: string }[]; // Agrega el prop svgsEnlaces al tipo Props
+  socialElements: { url: string; alt: string; iconUrl: string }[];
   logoImg: { url: string; alt: string };
 };
 
@@ -9,21 +11,27 @@ const Footer = ({ elements, socialElements, logoImg }: Props) => {
     <div className="container">
       <div className="bg-slate-900 h-52 w-screen">
         <div>
-          <img
+          <Image
             src={logoImg.url}
             alt={logoImg.alt}
+            width={20}
+            height={20}
             className="w-16 absolute right-0 mt-32 mr-5"
-          ></img>
+          />
 
           <ul className="text-white flex justify-center mt-10  ">
-            {/* aqui comienza */}
             <div className="space-x-3">
               {socialElements.map((element) => {
                 return (
                   <button className="mt-10 rounded-full border bg-white text-black h-10 w-10 ">
-                    <div className="flex flex justify-center">
+                    <div className="flex  justify-center">
                       <a href={element.url} target="_blank">
-                        <img src={element.iconUrl} alt={element.alt}></img>
+                        <Image
+                          src={element.iconUrl}
+                          alt={element.alt}
+                          width={25}
+                          height={25}
+                        />
                       </a>
                     </div>
                   </button>

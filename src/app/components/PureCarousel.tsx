@@ -1,5 +1,6 @@
 "use client";
-import { ReactNode, useState } from "react";
+import Image from "next/image";
+import { useState } from "react";
 import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
@@ -26,7 +27,12 @@ const PureCarousel = ({ slides }: Props) => {
             return (
               <Slide index={index}>
                 <div>
-                  <img src={slide.url} alt={slide.alt}></img>
+                  <Image
+                    src={slide.url}
+                    alt={slide.alt}
+                    width={10000}
+                    height={10000}
+                  />
                 </div>
               </Slide>
             );
