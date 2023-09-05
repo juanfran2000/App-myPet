@@ -11,6 +11,7 @@ const configCardAnimated = [
     buttonText: "Link Red",
     buttonLink: "/",
     background: "bg-red-500",
+    backgroundHover: "hover:bg-red-600",
   },
   {
     imageSrc: "/img-test/imgPurple.jpeg",
@@ -19,9 +20,10 @@ const configCardAnimated = [
     titleColor: "text-purple-500",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit Ipsum quidem esse eius repudiandae cupiditate voluptatibus placeat perferendis et optio sunt distinctio, molestias sed eos doloribus cumque fugiat incidunt molestiae nobis?",
-    buttonText: "Link Purple",
+    buttonText: "Link Yellow",
     buttonLink: "/",
     background: "bg-purple-500",
+    backgroundHover: "hover:bg-purple-600",
   },
 ];
 
