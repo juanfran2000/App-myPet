@@ -8,9 +8,6 @@ const configCardAnimated = [
     titleColor: "text-red-500",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit Ipsum quidem esse eius repudiandae cupiditate voluptatibus placeat perferendis et optio sunt distinctio, molestias sed eos doloribus cumque fugiat incidunt molestiae nobis?",
-    buttonText: "Link Red",
-    buttonLink: "/",
-    background: "bg-red-500",
   },
   {
     imageSrc: "/img-test/imgPurple.jpeg",
@@ -19,9 +16,6 @@ const configCardAnimated = [
     titleColor: "text-purple-500",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit Ipsum quidem esse eius repudiandae cupiditate voluptatibus placeat perferendis et optio sunt distinctio, molestias sed eos doloribus cumque fugiat incidunt molestiae nobis?",
-    buttonText: "Link Purple",
-    buttonLink: "/",
-    background: "bg-purple-500",
   },
 ];
 
@@ -34,6 +28,7 @@ export default function Home() {
         }}
         elements={configCardAnimated}
       />
+      <div className="flex justify-center mt-10"></div>
     </div>
   );
 }
